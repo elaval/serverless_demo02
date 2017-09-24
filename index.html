@@ -1,55 +1,44 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Serverless Demo 02</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Serverless Demo 02</title>
 
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />  
-  <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
 
-</head>
+  </head>
+  <body>
 
-<body>
-    <h1>Hi, this is a simple demo with authentication</h1>
-    <p>Your lucky number is <span id='luckyNumber'></span></>
-    <div id="firebaseui-auth-container"></div>
-        
-    
-    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
-    
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAj-cM5nUJQaq-9vVF6dv5qZm9dSuzYjLg",
-            authDomain: "serverless-demo01.firebaseapp.com",
-            databaseURL: "https://serverless-demo01.firebaseio.com",
-            projectId: "serverless-demo01",
-            storageBucket: "serverless-demo01.appspot.com",
-            messagingSenderId: "432984924580"
-        };
-        firebase.initializeApp(config);
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Serverless demo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-user"></span>
+                      <strong><span id="sign-in-status"></span></strong>
+                      <span class="glyphicon glyphicon-chevron-down"></span>
+                  </a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <div class="container">
+          <h1>Hi, this is a simple demo with authentication</h1>
+          <p>Your lucky number is <span id='luckyNumber'></span></>
+          <button class="btn" id="sign-in"></button>
+          <div id="account-details"></div>
+      </div>
 
-        // FirebaseUI config.
-        var uiConfig = {
-            signInSuccessUrl: 'https://demo.firstmakers.com/demo02',
-            signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: '<your-tos-url>'
-        };
-
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-    <script src="main.js"></script>
-</body>
+      <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>  
+      <script src="firebaseconfig.js"></script>
+      <script src="main.js"></script>      
+  </body>
 </html>
+
