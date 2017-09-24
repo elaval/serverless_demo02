@@ -23,7 +23,7 @@ initApp = function() {
             document.getElementById('sign-in').textContent = 'Sign in';
             document.getElementById('account-details').textContent = '';
             document.getElementById('sign-in').addEventListener('click', () => {
-                window.location.assign('/login.html');
+                window.location.assign('/demo02/login.html');
             });
         }
     }, function(error) {
