@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Serverless Demo 02</title>
 
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 
@@ -21,23 +22,31 @@
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="glyphicon glyphicon-user"></span>
-                      <strong><span id="sign-in-status"></span></strong>
+                      <strong><span id="sign-in-status" class="username"></span></strong>
                       <span class="glyphicon glyphicon-chevron-down"></span>
                   </a>
+                  <button class="btn" id="sign-out">Sign out</button>
               </li>
           </ul>
         </div>
       </nav>
   
       <div class="container">
-          <h1>Hi, this is a simple demo with authentication</h1>
-          <p>Your lucky number is <span id='luckyNumber'></span></>
-          <button class="btn" id="sign-in"></button>
-          <div id="account-details"></div>
+          <div id="signed-out-content" class="visible">
+              <h1>Please sign in using your prefered method</h1>
+              <div id="firebaseui-auth-container"></div> 
+          </div>
+          <div id="signed-in-content" class="hidden">
+            <h1>Congratulations <span class="username"></span>, you are a valid user in our demo page.</h1>
+          </div>
+          
+
       </div>
 
-      <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>  
-      <script src="firebaseconfig.js"></script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script> 
+      <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+      <script src="firebaseconfig.js"></script> 
       <script src="main.js"></script>      
   </body>
 </html>

@@ -2,4 +2,15 @@ body {
     padding-top: 5rem;
 }
 
+.hidden {
+    display: none;
+}
+
+#sign-out {
+    cursor: pointer;
+}
+
+
+
+
   
